@@ -14,13 +14,16 @@ void CMyCircle::UpdatePoint(CPoint pt)
 {
 	m_q = pt;
 	m_radius = sqrt((m_p.x - m_q.x) * (m_p.x - m_q.x) + (m_p.y - m_q.y) * (m_p.y - m_q.y));
-
+	SetRect();
 }
 
 void CMyCircle::Draw(CDC *dc)
 {
 	CBrush brush(m_color);
 	dc->SelectObject(brush);
+	CPen pen(PS_SOLID, 1,m_color);
+	dc->SelectObject(pen);
+
 	dc->Ellipse(m_p.x - m_radius, m_p.y - m_radius, m_p.x + m_radius, m_p.y + m_radius);
 }
 

@@ -7,7 +7,7 @@ public:
 	CMyShape *m_root;
 	std::list <CMyShapeTree> m_child;
 	int m_childCount;
-	CRect m_outerBox;
+	CRect m_selectBox;
 	bool m_isSelected;
 	int m_weight;
 
